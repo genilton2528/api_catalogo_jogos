@@ -6,7 +6,7 @@ using ApiCatalogoJogos.ViewModel;
 
 namespace ApiCatalogoJogos.Services
 {
-    public interface IJogoService
+    public interface IJogoService : IDisposable
     {
         Task<List<JogoViewModel>> Obter(int pagina, int quantidade);
         
