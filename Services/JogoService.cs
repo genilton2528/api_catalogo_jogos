@@ -10,7 +10,7 @@ using ApiCatalogoJogos.ViewModel;
 
 namespace ApiCatalogoJogos.Services
 {
-    public class JogoService
+    public class JogoService : IJogoService
     {
         private readonly IJogoRepository _jogoRepository;
 
