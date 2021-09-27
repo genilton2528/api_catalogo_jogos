@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiCatalogoJogos.Controllers.V1;
 using ApiCatalogoJogos.Repositories;
 using ApiCatalogoJogos.Services;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +32,14 @@ namespace ApiCatalogoJogos
             services.AddScoped<IJogoService, JogoService>();
             services.AddScoped<IJogoRepository, JogoSqlServerRepository>();
             
+            #region CicloDeVida
+
+            services.AddSingleton<IExemploSingleton, ExemploCicloDeVida>();
+            services.AddScoped<IExemploScoped, ExemploCicloDeVida>();
+            services.AddTransient<IExemploTransient, ExemploCicloDeVida>();
+
+            #endregion
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

@@ -58,7 +58,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         public Guid Id { get; }
     }
 
-    public interface IExemploSingleton :IExemploGeral
+    public interface IExemploSingleton : IExemploGeral
     { }
 
     public interface IExemploScoped : IExemploGeral
